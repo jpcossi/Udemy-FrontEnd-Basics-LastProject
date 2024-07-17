@@ -1,0 +1,500 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root{
+  font-size: 62.5%;
+}
+
+body{
+  line-height: 1.4;
+}
+
+body, a, ul{
+  text-decoration: none;
+  list-style-type: none;
+  font-size: 1.6rem;
+  font-family: 'Open Sans', sans-serif;
+}
+
+img{
+  max-width: 100%;
+}
+
+.header{  
+  width: 100%;  
+  .header-logo{  
+    padding: 2rem;    
+    background-color: #63c6ae;
+    display: block;
+    float: left;
+    
+    a{
+      display: block;
+      font-size: 2.4rem;
+      font-weight: bold;
+      text-transform: uppercase;  
+      color: #fff;
+    }    
+  }
+
+  .btnMenu{
+    padding-top: 1rem;
+    float: right;
+    margin: 1.5rem;
+    background: transparent;
+    border: none;
+    font-size: 1.4rem;
+  }
+
+  .header-nav {
+    clear: left;
+    ul{
+      padding: 0;
+      text-align: center;
+      li{
+        text-transform: uppercase;
+        background-color: #242c2c;
+        border-bottom: 0.1rem dotted rgba(255, 255, 255, 0.2);        
+        a{
+          display: block;       
+          padding: 2.5rem 0;
+          color: #586165;
+          font-size: 1.4rem;
+          font-weight: 600;
+          transition: .5s ease;
+        }  
+        a:hover{
+          color: #63c6ae;
+        }
+      }      
+    }      
+  }
+}
+
+.js .header{
+  position: fixed;
+  width: 100%;
+  background-color: white;
+  z-index: 10;
+}
+
+.js .header-nav{    
+  transition: max-height 1s;
+}
+
+.js .carousel{
+  overflow: hidden;
+  color: white;
+}
+
+.js .carousel .slideshow{
+  position: relative;
+  width: 100%;
+  margin: auto;
+  max-width: 80rem;
+}
+
+.js .carousel figure{
+  opacity: 0;
+  transition: 1s opacity;
+  width: 100%;  
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.js .carousel figure.show{
+  opacity: 1;
+  position: static;
+}
+
+.js .carousel .prev, .js .carousel .next{
+  z-index: 3;
+  position: absolute;
+  top: 50%;
+  cursor: pointer;
+}
+
+.js .carousel .prev{
+  left: 0rem;
+}
+
+.js .carousel .next{
+  right: 0rem;
+}
+
+.js .quotes-container{
+  overflow: hidden;
+  color: white;
+}
+
+.js .quotes-container .quotes{
+  position: relative;
+  width: 100%;
+  margin: auto;
+  max-width: 80rem;
+}
+
+.js .quotes-container figure{
+  opacity: 0;
+  transition: 0s opacity;
+  width: 100%;  
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.js .quotes-container figure.show{
+  opacity: 1;
+  position: static;
+}
+
+.js .quotes-container .prev, .js .quotes-container .next{
+  z-index: 3;
+  position: absolute;
+  top: 50%;
+  cursor: pointer;
+}
+
+.js .quotes-container .prev{
+  left: 0rem;
+}
+
+.js .quotes-container .next{
+  right: 0rem;
+}
+
+.hero{
+  height: 80vh;
+  padding: 4rem 2rem;
+  text-align: center;
+  background: linear-gradient(45deg,white 50%, transparent 50%) left calc(50% + 2rem) bottom no-repeat,  
+              linear-gradient(-45deg,white 50%, transparent 50%) left calc(50% - 2rem) bottom no-repeat,  
+              url(../img/01.jpg);
+  background-size: 4rem 4rem, 4rem 4rem, cover;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  h1{
+    background-color: #63c6ae;
+    color: white;
+    font-size: 2.8rem;
+    font-weight: 600;
+    padding: 3rem 2rem;        
+    text-transform: uppercase;
+  }
+
+  p{
+    background-color: #242c2c;
+    margin: 0.5rem 3rem 3.5rem;
+    color: white;
+    padding: 2rem;
+  }
+  
+  a{
+    border: .1rem solid rgba(255, 255, 255, .3);
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: .5rem;
+    padding: 1.5rem 2.5rem;
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  a:hover{
+    color: rgb(158, 158, 158);
+  }
+}
+
+.container{
+  margin: auto;
+  padding: 0 1rem ;
+  max-width: 98rem;
+}
+
+.people-cards{
+  margin-top: 6rem;
+  .card{
+    border-left: 0.1rem solid #dbe1e7;
+    border-right: 0.1rem solid #dbe1e7;
+
+    .image-card{
+      width: 100%;
+    }
+    
+    .avatar-image{
+      margin: -5.5rem auto;
+      width: 8.8rem;
+      height: 8.8rem;
+      overflow: hidden;    
+    }
+
+    .content-card{
+      text-align: center;
+      padding: 4rem 2.5rem 1rem;
+      margin-top: 2.5em;
+  
+      h2{
+        color: #737c85;
+        font-size: 2.1rem;
+        font-weight: normal;
+      } 
+      
+      p{
+        color: #929da5;
+        font-size: 1.4rem;
+      }
+    }    
+  }
+
+  .card:hover{
+    outline: 0.5rem solid #63c6ae;
+    outline-offset: -0.5rem;
+
+    .avatar-image img{
+     transform: translateY(-50%);   
+    }
+
+    .content-card{
+      h2, p{
+        color: #63c6ae;
+      }
+    }
+  }     
+}
+
+.content{
+  background: #f8f9f9;
+  padding: 2rem 0 8rem;
+  border-top: 1px solid #e3e3e3;
+
+  article{
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+
+    h3{
+      color: #737c85;
+      font-size: 2.1rem;
+      padding-top: 4rem;
+      font-weight: 500;
+    }
+
+    p{      
+      margin-top: 1rem;
+      color: #929da5;
+      font-size: 1.4rem;
+      word-spacing: 0.3rem;
+    }
+
+    button{
+      padding: 1.5rem 4rem;
+      border: none;
+      border-radius: 3px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.5rem;
+      margin-right: 1.5rem;
+      display: inline-block;
+      transition: background .5s;
+    }
+
+    button:hover{
+      background-color: #929da5;
+    }
+
+    .button1{
+      background-color: #63c6ae;
+      color: white;
+    }
+
+    .button2{
+      background-color: #455357;
+      color: white;
+    }
+
+
+  }
+}
+
+.last-articles{  
+  .title{ 
+    background-color: #63c6ae;
+    padding:  0.5rem 0;
+    
+    h2{
+      font-size: 2.4rem;
+      color: white;
+      text-transform: uppercase;
+      font-weight: 400;
+    }
+  }
+
+  .thumbs{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+    grid-auto-rows: auto;
+    grid-gap: 0;
+
+    img{
+      display: block;
+      width: 100%;
+    }
+  }
+}
+
+.carousel{
+  background-color: #242a2c;
+  padding: 12.5rem 0 10rem;
+  width: 100%;
+  overflow: auto;
+
+  .slideshow{
+    white-space: nowrap;
+
+    figure{
+      display: inline-block;
+    }
+  }
+}
+
+.quotes-container{
+  background-color: #63c6ae;
+  padding: 5rem 0;
+  border-bottom: 1.2rem solid #48b9a1;
+  
+  .quotes{
+    padding: 0 4rem;
+    figure {
+      h2{
+        padding:2.5rem 0;
+        color: white;
+        font-size: 3rem;
+        font-style: italic;
+        font-weight: normal;
+      }
+
+      figcaption{
+        color: white;
+        font-size: 1.8rem;
+        text-align: center;
+        font-weight: normal;
+      }
+    }  
+  }  
+}
+
+.no-js .quotes figure:nth-last-child(1){
+  margin-top: 5em;
+}
+
+.footer{
+  background-color: #242a2c;
+  padding: 5rem 0  25rem;
+  color: #454e51;
+  font-size: 1.4rem;
+
+  .container{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    
+    h2{
+      padding: 0.5rem 0;
+    }
+
+    .footer-links li{
+      list-style: none;
+    }
+
+    .footer-links a{
+      color: #454e51;
+      display: block;
+      font-weight: 600;
+      text-decoration: none;
+    }
+  }
+}
+
+@media screen and (min-width: 1024px){
+  .header{
+    position: fixed;
+    background-color: white;
+
+    .header-logo{
+      width: 25%;
+      text-align: right;
+      box-sizing: border-box;
+    }
+
+    button{
+      display: none;
+    }  
+
+    .header-nav{
+      max-width: 80rem;
+      width: 75%;
+      clear: none;
+      float: left;
+
+      ul{
+        display: flex;
+        justify-content: space-around;
+        
+        li{
+          border-bottom: none;
+          flex-grow: 1;
+        }
+      }
+
+      a{
+        background-color: white;
+      }
+
+    }
+
+  }
+
+  .people-cards{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 5rem;
+  }
+
+  .content{
+    .container{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 3rem;
+    }
+  }
+
+  .last-articles{
+    .thumbs{
+      grid-template-columns: repeat(6, 1fr);
+    }
+  }
+
+  .footer{
+    .container{
+      display: flex;
+      flex-direction: row;
+      gap: 3rem; 
+
+      h2{
+        text-transform: uppercase;
+      }
+    }
+  }
+
+
+}
+
+
+
+
